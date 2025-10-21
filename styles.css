@@ -1,0 +1,572 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3dafe48;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.container {
+  max-width:80%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  position: relative;
+  padding: 20px;
+        background-color: lab(63.54% 8.99 -28.27 / 0.26);
+     border-radius: 60px; 
+    box-shadow: 8px 8px 20px 0 #3a318a51, 10px 12px 20px #ebdcb7af;
+}
+
+.card::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); 
+    clip-path: url(#circleClip); 
+    transition: clip-path 0.8s ease-in-out;
+    z-index: 0;
+}
+
+.card.animate::before {
+    clip-path: url(#fullCircleClip); 
+}
+
+.card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.card-tall {
+  grid-row: span 2;
+  min-height: 560px;
+}
+
+.card-description {
+  font-family: 'Helvetica', sans-serif;                                                        
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 400;
+  text-align: left;
+}
+
+/* Início */
+.card-purple-dark {
+             font-family: 'Magofah', sans-serif;
+             text-align: center;  
+  background:#9752ae58;
+  color: rgb(252, 229, 255);
+  padding: 12px 16px;
+  border-radius: 60px;
+  display: grid;
+  grid-template-rows: auto;
+  position: relative;  
+  }
+
+  /* Logo */
+.card-purple-light {
+  background: #a796c974;
+  color: #000000;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;  
+  justify-content: center; 
+  position: relative;   
+}
+
+.hero-image {
+  position: relative; 
+  transform: none;    
+  width: 230px;
+  max-width: 80%;    
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Projetos */
+.card-purple-medium {
+  background: #b3d0e87d;
+  color: #346787 ;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 60px;
+  
+}
+a {
+  color: #f8f1c7b7;
+}
+
+/* Habilidades */
+.card-yellow {
+  background: #F4F1E3;
+  color: #243ca7;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 60px;
+}
+
+.botao-modal {
+  background-color: #6c63ff;       /* Cor de fundo */
+  color: #fff;                     /* Cor do texto */
+  border: none;                    /* Sem borda */
+  padding: 12px 16px;              /* Espaçamento interno */
+  font-size: 14px;                 /* Tamanho da fonte */
+  border-radius: 60px;              /* Cantos arredondados */
+  cursor: pointer;                 /* Mãozinha ao passar o mouse */
+  transition: all 0.3s ease;       /* Suavidade na animação */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra leve */
+ position: fixed;
+  z-index: 9999;
+  right: 30px;
+  bottom: 10px;
+
+}
+
+/* Efeito ao passar o mouse */
+.botao-modal:hover {
+  background-color: #574fd6;
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+    background-color: #75757542; /* Semi-transparent background */
+      backdrop-filter: blur(5px); /* Apply a 10px blur to the background behind this element */
+      /* Add other styling for your container */
+      padding: 20px;
+
+}
+
+/* Conteúdo do modal ocupando toda a tela */
+.modal-conteudo {
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  max-width: 600px;
+  max-height: 90vh;
+  padding: 100px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  text-align: left;
+    background: #F4F1E3;
+    color: #243ca7;
+    font-family: 'Magofah', sans-serif;
+    font-size: 20px;
+  border-radius: 60px; 
+  box-shadow: 4px 4px 8px 0 #97979742;
+}
+
+/* Botão de fechar no canto superior direito */
+.fechar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #243ca7;
+}
+
+/* Contato */
+.card-yellow-light {
+  background: #667ab784;
+  color:#f8f1c7b7;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 60px;
+}
+
+/* Icons */
+/* Coluna 1 */
+.floating-hearts {
+  position: absolute;
+  top: 180px;
+  bottom: 0px;  
+  right: -30px;
+  width: 120px;
+}
+
+.star-icon {
+  width: 20px;
+  height: 20px;
+  color: #dbb621a6;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: #e9daf1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 0px 2px solid #ffffff;
+  box-shadow: 2px 2px 3px rgba(143, 102, 163, 0.423);
+}
+
+/* Icon flor giratória */
+.sparkle-icon {
+  position: absolute;
+ right: 30px;
+  width: 40px;
+  height: 200px;}
+
+  .card-main {
+    margin-top: 6%;
+  }
+
+.card-title {
+                   font-family: 'Fregan Serif', sans-serif;
+  font-size: 1.5rem;
+  top: 0%;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Ícones nos contatos */
+.contact-icon {
+   position: absolute;
+  bottom: 0px;
+ left: 20px;
+  width: 50px;
+  height: 40px;
+}
+.contact-icon2 {
+   position: absolute;
+  bottom: 0px;
+ left: 0px;
+  width: 50px;
+  height: 96px;
+}
+
+.card-description2 {
+    font-family: 'Helvetica', sans-serif;                                                        
+  margin-top: 10px;
+  margin-left: 60px;
+  margin-right: 20px;
+  font-weight: 400;
+  text-align: left;
+  line-height: 5cap;
+}
+/* Ícones Projetos */
+.star-burst-icon {
+  position: absolute;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  color: #fbbf24; 
+}
+
+.stars-decoration {
+  display: flex;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.circular-badge {
+ position: absolute;
+ bottom: 0px;
+ right: 20px;
+  width: 50px;
+  height: 75px;
+}
+
+/* Ícones Habilidades */
+.dog-icon {
+   position: absolute;
+ bottom: 0px;
+ right: 12 px;
+  width:50px;
+  height: 60px;
+}
+
+/*botão 2 */
+.botao-modal2 {
+  background-color: #6c63ff;       /* Cor de fundo */
+  color: #fff;                     /* Cor do texto */
+  border: none;                    /* Sem borda */
+  padding: 12px 16px;              /* Espaçamento interno */
+  font-size: 14px;                 /* Tamanho da fonte */
+  border-radius: 60px;              /* Cantos arredondados */
+  cursor: pointer;                 /* Mãozinha ao passar o mouse */
+  transition: all 0.3s ease;       /* Suavidade na animação */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra leve */
+ position: fixed;
+  z-index: 9999;
+  right: 30px;
+  bottom: 10px;
+}
+
+/* Efeito ao passar o mouse */
+.botao-modal2:hover {
+  background-color: #574fd6;
+  transform: scale(1.05);
+}
+
+.modal2 {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+    background-color: #75757542; /* Semi-transparent background */
+      backdrop-filter: blur(5px); /* Apply a 10px blur to the background behind this element */
+      /* Add other styling for your container */
+      padding: 20px;
+
+}
+
+/* Conteúdo do modal ocupando toda a tela */
+.modal-conteudo2 {
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  max-width: 600px;
+  max-height: 90vh;
+  padding: 100px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  text-align: left;
+    background:#b3d0e8e9;
+  color: #346787 ;
+    font-family: 'Magofah', sans-serif;
+    font-size: 20px;
+  border-radius: 60px; 
+  box-shadow: 4px 4px 8px 0 #97979742;
+}
+
+/* Botão de fechar no canto superior direito */
+.fechar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #243ca7;
+}
+
+
+/* Tela 1024-768 */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .container {
+    padding: 20px 20px;
+  }
+
+  .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding: px;
+  border-radius: 20px;
+  list-style: none;
+  } 
+ 
+  .card-description {
+  font-family: 'Helvetica', sans-serif;                                                        
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 400;
+  text-align:left; 
+}
+
+  .dog-icon {
+  position: absolute;
+ bottom: 0px;
+ top: 20px;
+ right: 20px;
+  width: 40px;
+}
+
+  .icon-circle {
+  width: 60px;
+  height: 60px;
+}
+
+.star-burst-icon {
+   position: absolute;
+  left: 15px;
+  width: 55px;
+  height: 40px;
+}
+.circular-badge {
+ display: flex;
+  align-items: center;  
+  justify-content: center;
+  position: relative; 
+  width: 0px;
+  height: 0px;
+}
+
+.contact-icon {
+  position: absolute; 
+  width: 45px;
+  height: 40px;
+}
+
+.hero-image {
+  display: flex;
+  align-items: center;   
+  justify-content: center; 
+  position: relative;    
+  width: 150px;
+  max-width: 100%;     
+}
+.sparkle-icon {
+ position: absolute; 
+  width: 35px;
+ top: 20px;
+}
+  
+.floating-hearts {
+    position: absolute;
+    top: 91%;
+    right: 6;
+    width: 20vw;
+    max-width: 80px;
+  }
+}
+
+ @media only screen and (max-width: 767px) { 
+   .grid {
+  display: vertical;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 15px;    
+  padding: 20px;
+  border-radius: 20px;
+  list-style: none;                                                
+  }
+
+ .card {
+    padding: 20px;
+    min-height: 1px;
+  }
+  .card-main {
+    font-size: 1.5rem;
+    margin-top: 0%;
+  }
+  .card-tall {
+    grid-row: span 1;
+    min-height: 120px;
+  }
+  .brand-title {
+    font-size: 1.8rem;
+  }
+  .brand-subtitle {
+    font-size: 1.2rem;
+  }
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+.card-description {
+        font-family: 'Helvetica', sans-serif;                                                        
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align:left;
+}
+
+.floating-hearts {
+    position: absolute;
+    top: 80%;
+    right: -20PX;
+    width: 20vw;
+    max-width: 60px;
+  }
+
+.sparkle-icon {
+   position: absolute;
+ right: 0 px;
+  width: 30px;
+  height: 65px;
+  color: #ffef3b;
+}
+.contact-icon {
+ position: absolute;
+ right: -5px;
+  width: 40px;
+  height: 40px;
+}
+
+.hero-image {
+  position: relative; 
+  transform: none;  
+  width: 120px;
+  max-width: 80%;    
+  height: auto;
+  display: block;}
+
+   .icon-circle {
+  width: 40px;
+  height: 40px;
+}
+
+.star-burst-icon {
+   position: absolute;
+  left: 15px;
+  width: 30px;
+  height: 40px;
+}
+
+.circular-badge {
+ position: absolute;
+ bottom: 0px;
+right: 0 px;
+  width: 0px;
+  height: 0px;
+}
+.star-burst-icon {
+ position: absolute;  
+  left: 15px;
+  width: 35px;
+  height: 40px; 
+}
+ .dog-icon {
+  position: absolute;
+ bottom: 0px;
+ top: 20px;
+ left: 30px;
+  width: 30px;
+}
+
+.card-purple-medium {
+  padding-bottom: 50px;
+}
+}
