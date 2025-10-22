@@ -10,7 +10,7 @@ body {
   overflow-x: hidden;
 }
 .container {
-  max-width:80%;
+  max-width:90%;
   margin: 0 auto;
   padding: 40px 20px;
   position: relative;
@@ -46,6 +46,10 @@ body {
 
 .card > * {
     position: relative;
+    width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
     z-index: 1;
 }
 
@@ -343,7 +347,6 @@ a {
       backdrop-filter: blur(5px); /* Apply a 10px blur to the background behind this element */
       /* Add other styling for your container */
       padding: 20px;
-
 }
 
 /* Conteúdo do modal ocupando toda a tela */
@@ -355,10 +358,9 @@ a {
   width: 80vw;
   max-width: 600px;
   max-height: 90vh;
-  padding: 100px;
+  padding: 50px;
+  text-align: center;
   box-sizing: border-box;
-  overflow-y: auto;
-  text-align: left;
     background:#b3d0e8e9;
   color: #346787 ;
     font-family: 'Magofah', sans-serif;
@@ -385,6 +387,7 @@ a {
 
   .container {
     padding: 20px 20px;
+
   }
 
   .grid {
@@ -392,7 +395,7 @@ a {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 20px;
-  padding: px;
+  padding: 20px;
   border-radius: 20px;
   list-style: none;
   } 
@@ -463,19 +466,25 @@ a {
 }
 
  @media only screen and (max-width: 767px) { 
-   .grid {
-  display: vertical;
+   
+ .container {
+max-width: 100%;
+ }
+
+  .grid {
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 15px;    
   padding: 20px;
   border-radius: 20px;
-  list-style: none;                                                
+  list-style: none;  
   }
 
  .card {
-    padding: 20px;
-    min-height: 1px;
+  box-sizing: border-box;
+  max-width: 100%;
+
   }
   .card-main {
     font-size: 1.5rem;
@@ -568,5 +577,9 @@ right: 0 px;
 
 .card-purple-medium {
   padding-bottom: 50px;
+}
+.modal-conteudo {
+  padding: 40px;
+  overflow-y: auto;
 }
 }
